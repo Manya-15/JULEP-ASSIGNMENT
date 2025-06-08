@@ -62,7 +62,7 @@ The workflow is orchestrated using two distinct Julep AI agents and several task
     pip install julep pyyaml
     ```
 3.  **Set API Keys:**
-    Replace the placeholder values in the `JULEP_API_KEY` and `OPENWEATHERMAP_API_KEY` variables at the top of the `main.py` file with your actual keys.
+    Replace the placeholder values in the `JULEP_API_KEY` and `OPENWEATHERMAP_API_KEY` variables at the top of the `final.py` file with your actual keys.
     ```python
     JULEP_API_KEY = "YOUR_JULEP_API_KEY_HERE"
     OPENWEATHERMAP_API_KEY = "YOUR_OPENWEATHERMAP_API_KEY_HERE"
@@ -80,4 +80,12 @@ The workflow is orchestrated using two distinct Julep AI agents and several task
 Execute the Python script:
 
 ```bash
-python main.py
+python final.py
+```
+The script will print the progress of agent and task creation, execution, and finally, the complete food tour plan directly to your console.
+
+---
+
+### Example Output
+
+An example of the generated food tour plan for the predefined parameters (e.g., `cities = ["Rome"]`, `diet = "vegetarian"`, `mood = "romantic"`) can be found in `output.txt`. This file provides a concrete illustration of the AI's output format and content.

@@ -11,16 +11,18 @@ This project demonstrates a multi-agent AI workflow built with Julep, designed t
 * **Top-Rated Restaurant Discovery:** Finds highly-rated restaurants known for serving the recommended dishes, aligning with the chosen dining mood.
 * **Delightful Foodie Tour Narratives:** Generates creative and engaging breakfast, lunch, and dinner narratives for each city, making the tour truly immersive.
 
-## How It Works: The Julep Workflow
+---
 
-The workflow is orchestrated using two distinct Julep AI agents and several tasks, ensuring a modular and efficient process:
+## How It Works: The Julep Workflow (`final.py` at the Core)
+
+The core logic for this food tour planner is encapsulated within the `final.py` script. It orchestrates the entire process using two distinct Julep AI agents and their associated tasks, ensuring a modular and efficient workflow:
 
 ### 1. Dish Explorer Agent (Powered by Claude-3.5-Sonnet)
 
-* **Purpose:** This agent is responsible for researching and identifying top local dishes that adhere to the specified `dietary_preference` and are suitable for the chosen `mood`. It also finds relevant restaurants.
+* **Purpose:** This agent is responsible for researching and identifying top local dishes that adhere to the specified `dietary_preference` and are suitable for the chosen `mood`. It also finds relevant restaurants serving these dishes.
 * **Task: Dish and Restaurant Finder:**
     * **Input:** City name, dietary preference, and dining mood.
-    * **Process:** Prompts the LLM (Claude-3.5-Sonnet) to act as a food critic, extracting top dishes and associated restaurants. Strict formatting ensures the output is easily parsable for the next stage.
+    * **Process:** Prompts the LLM (Claude-3.5-Sonnet) to act as a food critic, extracting top dishes and associated restaurants. Strict formatting ensures the output is easily parsed for the next stage.
     * **Output:** A structured text containing lists of recommended dishes with short descriptions and restaurants known for those dishes, along with their atmosphere.
 
 ### 2. Meal Planner Agent (Powered by GPT-4o)
@@ -42,6 +44,8 @@ The workflow is orchestrated using two distinct Julep AI agents and several task
             * `parallelism: 3` is used to speed up the generation of plans for multiple cities concurrently.
         4.  **Final Assembly:** Concatenates all individual city plans into a single, cohesive food tour document.
     * **Output:** A comprehensive string detailing the one-day food tour for each city, incorporating weather-aware recommendations and delightful narratives.
+
+---
 
 ## Getting Started
 
@@ -89,3 +93,14 @@ The script will print the progress of agent and task creation, execution, and fi
 ### Example Output
 
 An example of the generated food tour plan for the predefined parameters (e.g., `cities = ["Rome"]`, `diet = "vegetarian"`, `mood = "romantic"`) can be found in `output.txt`. This file provides a concrete illustration of the AI's output format and content.
+
+---
+
+### Alternative Data Sourcing (Experimental)
+
+During the development of this project, I explored an alternative method for sourcing dish and restaurant information using **web search APIs and scraping**, as partially implemented in `serper.py`. This approach involved:
+
+* Utilizing the Serper API (for Google Search results) to find relevant URLs.
+* Employing `scrapegraphai` to extract structured data from those URLs.
+
+While this alternative method shows promise for comprehensive data gathering, it was not fully integrated into the main `final.py` workflow due to time constraints and to prioritize the direct functionality of Julep agents. It represents a potential enhancement for future iterations, allowing for even richer and more dynamic input data.

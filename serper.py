@@ -7,10 +7,10 @@ import json
 from scrapegraphai.graphs import SmartScraperGraph
 
 # ---- API KEYS ----
-JULEP_API_KEY = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiNjUyMjI0Yi1hNWQ3LTU2ZGItYTVhZS1kNzRkOTBjNjU3YTkiLCJpYXQiOjE3NDkyODUyNDUsImV4cCI6MTc1NDQ2OTI0NX0.531dKlPSYWqPFSnV6iaLLfgzBkjoNRX5K-no4UQFyT8CS-x07WEMOerQDsqH6VpwGiUcHKGIxIzQvVqHi9Qs8g"
-WEATHER_API_KEY = "a504af64fa7763b3c61303bff10120d9"
-SERPER_API_KEY = "b4571e3762d2602f18fe847c61dce87f1fc2ce7e"
-GROQ_API_KEY = "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"
+JULEP_API_KEY = "key"
+WEATHER_API_KEY = "key"
+SERPER_API_KEY = "key"
+GROQ_API_KEY = "key"
 
 cities = ["Delhi", "Tokyo", "Rome"]
 diet = "vegetarian"
@@ -144,22 +144,22 @@ debug_input = {
 }
 print(json.dumps(debug_input, indent=2))
 
-print("🚀 Running execution...")
+print(" Running execution...")
 execution = client.executions.create(
     task_id=TASK_UUID,
     input=debug_input
 )
 
 print(f"Execution started: {execution.id}")
-print("⏳ Polling for result...")
+print(" Polling for result...")
 
 while execution.status != "succeeded":
     time.sleep(5)
     execution = client.executions.get(execution.id)
     print(f"Status: {execution.status}")
 
-print("📥 Execution output:")
+print(" Execution output:")
 print(json.dumps(execution.output, indent=2))
 
-print("\n📍 Final Plan:\n")
+print("\n Final Plan:\n")
 print(execution.output.get("final_plan", execution.output))

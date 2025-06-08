@@ -13,9 +13,8 @@ class DateTimeEncoder(json.JSONEncoder):
 
 # --- Configuration ---
 # IMPORTANT: Replace with your actual, valid Julep API key
-JULEP_API_KEY = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiNjUyMjI0Yi1hNWQ3LTU2ZGItYTVhZS1kNzRkOTBjNjU3YTkiLCJlbWFpbCI6Im1hbnlham9zaGkxNTA3QGdtYWlsLmNvbSIsImlhdCI6MTc0OTMxNTkyOSwiZXhwIjoxNzQ5OTIwNzI5fQ.7U2xYKDj9FxXwS5wh7uWOUWOh8vKbmQsph-U-507Qwti7WsHsSOvvTNhj34UZI0qIiTYokHz2nmuGDtNce7AXA"
-# IMPORTANT: Your OpenWeatherMap API Key
-OPENWEATHERMAP_API_KEY = "a504af64fa7763b3c61303bff10120d9"
+JULEP_API_KEY = "key"# IMPORTANT: Your OpenWeatherMap API Key
+OPENWEATHERMAP_API_KEY = "key"
 
 # --- CONFIGURABLE PARAMETERS ---
 cities = ["Rome"]

@@ -13,6 +13,16 @@ This project demonstrates a multi-agent AI workflow built with Julep, designed t
 
 ---
 
+## 🛠 Files Overview
+
+| File         | Purpose                                              |
+|--------------|------------------------------------------------------|
+| `final.py`   | Main orchestrator with agent/task logic              |
+| `output.txt` | Example result for sample run                        |
+| `serper.py`  | *(Optional)* Web scraping alternative for dish data |
+
+---
+
 ## How It Works: The Julep Workflow (`final.py` at the Core)
 
 The core logic for this food tour planner is encapsulated within the `final.py` script. It orchestrates the entire process using two distinct Julep AI agents and their associated tasks, ensuring a modular and efficient workflow:
@@ -89,14 +99,19 @@ python final.py
 The script will print the progress of agent and task creation, execution, and finally, the complete food tour plan directly to your console.
 
 ---
-
-### Example Output
+## 📄 Output Example
 
 An example of the generated food tour plan for the predefined parameters (e.g., `cities = ["Rome"]`, `diet = "vegetarian"`, `mood = "romantic"`) can be found in `output.txt`. This file provides a concrete illustration of the AI's output format and content.
 
+- **Breakfast**: Dish + Restaurant + Narrative  
+- **Lunch**: Dish + Restaurant + Narrative  
+- **Dinner**: Dish + Restaurant + Narrative  
+
+**Weather conditions** are integrated into each segment.
+
 ---
 
-### Alternative Data Sourcing (Experimental)
+## 🔬 Exploratory (Optional) Enhancement {Alternative Data Sourcing (Experimental)}
 
 During the development of this project, I explored an alternative method for sourcing dish and restaurant information using **web search APIs and scraping**, as partially implemented in `serper.py`. This approach involved:
 
@@ -104,3 +119,18 @@ During the development of this project, I explored an alternative method for sou
 * Employing `scrapegraphai` to extract structured data from those URLs.
 
 While this alternative method shows promise for comprehensive data gathering, it was not fully integrated into the main `final.py` workflow due to time constraints and to prioritize the direct functionality of Julep agents. It represents a potential enhancement for future iterations, allowing for even richer and more dynamic input data.
+
+---
+
+## 💡 Why It’s Unique
+
+This workflow goes beyond generic food recommendations:
+
+- 🧠 **Understands your dining mood**
+- 🌤️ **Adapts to live weather**
+- 🍽️ **Crafts immersive, localized narratives**
+
+It delivers a **realistic, imaginative food day** powered entirely by AI agents and modular tools—no manual curation needed.
+
+
+
